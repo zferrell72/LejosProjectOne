@@ -12,7 +12,15 @@ public class CanDetector {
 	private static final int VISUALRANGE = 45;
 	
 	public CanDetector(){
+		
+	}
+	
+	public void scanForCan(){
 		ultraSonic.continuous();
+	}
+	
+	public void stopScanning(){
+		
 	}
 	
 	public boolean canWithinRange(){
