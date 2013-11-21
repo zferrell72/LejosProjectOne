@@ -9,6 +9,9 @@ public class MovementController {
 
 	private NXTMotor leftMotor;
 	private NXTMotor rightMotor;
+	private final int turning = 25;
+	private final int foward = 50;
+	private final int backward = 30;
 	
 	public MovementController(){
 		leftMotor = new NXTMotor(MotorPort.C);
@@ -16,17 +19,21 @@ public class MovementController {
 	}
 
 	public void turnAround(){
-		rightMotor.setPower(50);
+		rightMotor.setPower(turning);
 		rightMotor.forward();
 		
 	}
 	
 	public void moveForward(){
+		rightMotor.setPower(forward);
+		leftMotor.setPower(forward);
 		rightMotor.forward();
 		leftMotor.forward();
 	}
 	
 	public void moveBackward(){
+		rightMotor.setPower(backward);
+		leftMotor.setPower(backward);
 		rightMotor.backward();
 		leftMotor.backward();		
 	}
