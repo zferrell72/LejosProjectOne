@@ -9,25 +9,17 @@ import lejos.nxt.UltrasonicSensor;
 public class CanDetector {
 	private UltrasonicSensor ultraSonic = new UltrasonicSensor(SensorPort.S3);
 	private TouchSensor touch = new TouchSensor(SensorPort.S2);
-	private static final int VISUALRANGE = 45;
+	private static final int VISUALRANGE = 35;
 	
 	public CanDetector(){
-		
-	}
-	
-	public void scanForCan(){
 		ultraSonic.continuous();
-	}
-	
-	public void stopScanning(){
-		
 	}
 	
 	public boolean canWithinRange(){
 		return ultraSonic.getDistance() < VISUALRANGE;
 	}
 	
-	public boolean inContact() {
+	public boolean inContactWithCan() {
 		return touch.isPressed();
 	}
 }

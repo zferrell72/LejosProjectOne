@@ -10,19 +10,13 @@ import lejos.nxt.UltrasonicSensor;
 
 public class DoingStuff {
 
-	public static void main(String[] args) {
-		
-
-		while(true){
-			try{
-				Sound.playTone(1000, 250);
-				Thread.sleep(500);
-			} catch(Exception e){
-				
-			}
-		}
-		
-		
+//	public static void main(String[] args) {
+//		
+//
+//		MovementController movement = new MovementController();
+//		movement.adjustRight();
+//		
+//		
 //		UltrasonicSensor sonicSensor = new UltrasonicSensor(SensorPort.S3); 
 //		LightSensor lightSensor = new LightSensor(SensorPort.S1);
 //		NXTMotor leftMotor = new NXTMotor(MotorPort.C);
@@ -78,6 +72,6 @@ public class DoingStuff {
 //		while(sonicSensor.getDistance() > 10){
 //			
 //		}
-	}
+//	}
 
 }

@@ -12,6 +12,6 @@ public class BoundaryDetector {
 	}
 	
 	public boolean foundEdge(){
-		return (lightSensor.readValue() < (lightSensor.getHigh() / 2));
+		return (lightSensor.readValue() < (lightSensor.getHigh() / 1.25));
 	}
 }
