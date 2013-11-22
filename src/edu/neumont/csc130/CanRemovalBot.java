@@ -24,7 +24,7 @@ public class CanRemovalBot {
 	
 	//	remove a can from the circle
 	
-	public void removeCanFromCircle(){
+	public void removeCanFromCircle() throws InterruptedException{
 		
 		boolean canFound = false;
 		
@@ -32,7 +32,9 @@ public class CanRemovalBot {
 		
 		while(!canFound){
 			//	scan for can
-			
+			if(Thread.currentThread().isInterrupted()){
+				throw new InterruptedException();
+			}
 			canFound = scanForCan();
 		}
 		movement.stopBoth();
@@ -55,7 +57,7 @@ public class CanRemovalBot {
 	
 	//	push the can out of the circle
 	
-	public void pushCan(){
+	public void pushCan() throws InterruptedException{
 		
 		//	Center the can with the front of the robot
 		//	tell the movementController to move forward
@@ -72,6 +74,10 @@ public class CanRemovalBot {
 			
 			if(canDetector.inContactWithCan())
 				sound.playContinuousTone();
+			
+			if(Thread.currentThread().isInterrupted()){
+				throw new InterruptedException();
+			}
 		}
 		
 		// ** this needs to be different
