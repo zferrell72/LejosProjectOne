@@ -63,5 +63,24 @@ public class MovementController {
 		rightMotor.stop();
 		leftMotor.stop();
 	}
+	
+	public void turnAround(){
+		try{
+                        //        tell the robot to stop
+                        //        tell movementController to move back
+                        //        tell movementController to turn around
+                        
+                        movement.stopBoth();
+                        movement.moveBackward();
+                        Thread.sleep(2000);
+                        movement.stopBoth();
+                        movement.turnLeft();
+                        Thread.sleep(2000);
+                } catch (Exception e){
+                        e.printStackTrace();
+                }
+                
+                movement.stopBoth();
+	}
 
 }
