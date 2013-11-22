@@ -11,6 +11,7 @@ import lejos.nxt.UltrasonicSensor;
 public class DoingStuff {
 
 	public static void main(String[] args) {
+		//Initialize and start Timer on new thread
 		UltrasonicSensor sonicSensor = new UltrasonicSensor(SensorPort.S3); 
 		LightSensor lightSensor = new LightSensor(SensorPort.S1);
 		NXTMotor leftMotor = new NXTMotor(MotorPort.C);
