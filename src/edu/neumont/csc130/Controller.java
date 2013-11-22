@@ -17,7 +17,7 @@ public class Controller {
 	public void start(){
 		
 		// 	Initialize a timer on a new Thread
-		Timer theTimer = new Timer(1000, new MyTimerListener());
+		Timer theTimer = new Timer(1000, new MyTimerListener(Thread.currentThread()));
 		theTimer.start();
 		//	create a new robot
 		CanRemovalBot theBot = new CanRemovalBot();
@@ -34,9 +34,15 @@ public class Controller {
 	
 	private class MyTimerListener implements TimerListener {
 		
+		Thread mainThread;
+		
+		public MyTimerListener(Thread mainThreadReference){
+			mainThread = mainThreadReference;
+		}
+		
 		@Override
 		public void timedOut() {
-			
+			mainThread.interrupt();
 		}
 		
 	}
