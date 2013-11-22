@@ -21,16 +21,25 @@ public class MovementController {
 	}
 
 	public void turnLeft(){
+		
+		//	turn left motor forward for a duration
+		
 		rightMotor.setPower(turning);
 		rightMotor.forward();
 	}
 	
 	public void adjustRight(){
+		
+		//	turns left motor forward slightly to adjust to centering a can
+		
 		leftMotor.setPower(adjusting);
 		leftMotor.forward();
 	}
 	
 	public void moveForward(){
+		
+		//	both motors move forward
+		
 		rightMotor.setPower(forward);
 		leftMotor.setPower(forward);
 		rightMotor.forward();
@@ -38,6 +47,9 @@ public class MovementController {
 	}
 	
 	public void moveBackward(){
+		
+		//	both motors move backward
+		
 		rightMotor.setPower(backward);
 		leftMotor.setPower(backward);
 		rightMotor.backward();
@@ -45,6 +57,9 @@ public class MovementController {
 	}
 	
 	public void stopBoth(){
+		
+		//	both motors stop
+		
 		rightMotor.stop();
 		leftMotor.stop();
 	}
