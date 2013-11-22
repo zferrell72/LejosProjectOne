@@ -50,6 +50,8 @@ public class CanRemovalBot {
 	}
 	
 	public void resetPosition(){
+		
+		sound.playBeepingTone();
 		movement.turnAround();
 	}
 	
