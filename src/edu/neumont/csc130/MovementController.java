@@ -70,17 +70,17 @@ public class MovementController {
                         //        tell movementController to move back
                         //        tell movementController to turn around
                         
-                        movement.stopBoth();
-                        movement.moveBackward();
+                        stopBoth();
+                        moveBackward();
                         Thread.sleep(2000);
-                        movement.stopBoth();
-                        movement.turnLeft();
+                        stopBoth();
+                        turnLeft();
                         Thread.sleep(2000);
                 } catch (Exception e){
                         e.printStackTrace();
                 }
                 
-                movement.stopBoth();
+                stopBoth();
 	}
 
 }
