@@ -53,7 +53,13 @@ public class CanRemovalBot {
 	
 	public void resetPosition(){
 		
-		sound.playBeepingTone();
+		//      tell movementController to move back
+		//      tell the robot to stop
+		
+        	movement.moveBackward();
+        	sound.playBeepingTone();
+        	movement.stopBoth();
+		
 		movement.turnAround();
 	}
 	
