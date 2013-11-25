@@ -14,6 +14,15 @@ public class SoundController {
 	}
 	
 	public void playBeepingTone(){
-		Sound.playTone(BEEPING_TONE, 100);
+		// will play a beeping tone
+		try {
+        	for(int i = 0; i < 10; i++){
+        		Sound.playTone(BEEPING_TONE, 95);
+        		Thread.sleep(190);
+        	}
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }
